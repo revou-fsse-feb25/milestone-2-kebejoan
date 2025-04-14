@@ -4,71 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RevoFun | Portal For Edgy Gamers</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .scrollbar-none::-webkit-scrollbar {
+        display: none;
+        }
+    </style>
+
 </head>
-<body>
-    <header>
-        <h1>RevoFun</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#games">Games</a>
-                    <ul>
-                        <li><a href="clicking-game.html">The Clicking Game</a></li>
-                        <li><a href="guess-number.html">Guess The Number</a></li>
-                        <li><a href="rock-paper-scissors.html">Rock Paper Scissors</a></li>
-                    </ul>
+<body class="scrollbar-none overflow-y-scroll
+bg-neutral-800 font-jersey10 text-3xl text-white">
+    <div>
+        <header class="sticky top-0 bg-neutral-800 outline-2 outline-stone-900 z-9999">
+            <div class=" p-2 flex justify-between items-center">
+                <div class="drop-shadow-[2px_6px_0px_rgba(0,255,255,1)]">
+                    <a href="index.html">
+                        <h1 class="m-2 ml-4 mb-3 font-jersey10 text-7xl text-red-600 hover:text-pink-500 text-shadow-lg text-shadow-white hover:-translate-y-1 hover:scale-110 drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] transition ease-in-out">
+                            revo.fun
+                        </h1>
+                    </a>
+                </div>
+                <div class="font-jersey10 flex gap-4 text-4xl hover:drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)]">
+                    <nav class="hover:drop-shadow-[4px_2px_0px_rgba(0,255,255,1)]">
+                        <ul class="m-4 flex gap-8 hover:text-black text-shadow-lg">
+                            <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="index.html">Home</a></li>
+                            <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="">Games</a>
+                                <ul>
+                                    <li class="hidden"><a href="clicking-game.html">The Clicking Game</a></li>
+                                    <li class="hidden"><a href="guess-number.html">Guess The Number</a></li>
+                                    <li class="hidden"><a href="rock-paper-scissors.html">Rock Paper Scissors</a></li>
+                                </ul>
+                            </li>
+                            <!-- present when logged in, else hidden -->
+                            <!-- <li><a href="sign-up.html">Sign Up</a></li>
+                            <li><a href="log-in.html">Log In</a></li>
+                            <li><img src="..." alt="logo-user"></a></li>  -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="">
+            <div class=" bg-stone-900 outline-gray-400 hover:outline-white ">
+                <div class="hover:drop-shadow-[-9px_0px_0px_rgba(0,255,255,1)]">
+                    <h1 class=" p-2 text-8xl text-center hover:text-black hover:drop-shadow-[9px_0px_0px_rgba(255,0,255,1)] hover:-translate-y-1 hover:scale-100 text-shadow-lg transition ease-in-out scale-98 text-shadow-yellow-400">Portal for Sketchy Gamers</h1>
+                </div>
+                <div class="p-6">
+                    <p class="m-2 p-2 text-justify text-shadow-xs text-shadow-yellow-500 text-4xl">
+                        Welcome to the <strong class="text-red-700 text-shadow-xs text-shadow-black ">totally legit</strong> gamer portal — handcrafted in the shadows using expired code and pure chaos. Inside you'll find weird little games, questionable design choices, and maybe a hidden malware boss battle (just kidding). I'm not saying playing here will improve your gaming skills, but it <strong class="text-red-700 text-shadow-xs text-shadow-black ">will</strong> confuse your browser history. Enter if you dare. Or if you're just really bored.
+                        Thanks for stopping by — your sanity is non-refundable. Now click something random and hope for the best.
+                    </p>
+                </div>
+            </div>
+        </main>
+        <section class="">
+            <div class="">
+                <h2 id="games" class="mt-10 p-2 text-6xl text-center text-shadow-md text-shadow-yellow-800">Available Sketchy Games</h2>
+            </div>
+            <ul class="text-justify m-2 p-2 text-stone-500">
+                <li class="outline-2 transition ease-in-out hover:scale-101 outline-gray-400 hover:outline-white hover:text-stone-300 m-2 p-2 bg-stone-700">
+                    <a href="clicking-game.html">
+                        <div>
+                            <h3 class="font-jersey10 text-4xl text-red-600 hover:text-pink-500 text-shadow-md transition ease-in-out">The Clicking Game</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident esse soluta nostrum deleniti neque sapiente eligendi! Iusto earum voluptatum rem ducimus aliquam, voluptatibus molestias. Atque eaque, sapiente quam corrupti animi maiores? Tempore error corrupti repellat veritatis maiores itaque cumque quo hic, adipisci eum laboriosam deserunt, doloribus iusto odio, at aliquam nostrum ea. In non at excepturi labore quasi quo deleniti maxime impedit magnam fugiat. Sapiente, quos tempore. Voluptatum natus optio, corrupti numquam voluptatibus accusantium similique, fugiat cumque sequi alias mollitia esse ducimus totam repellendus. Velit, eos. Eos, iure saepe!
+                            </p>
+                        </div>
+                    </a>
                 </li>
-                <li><a href="sign-up.html">Sign Up</a></li>
-                <li><a href="log-in.html">Log In</a></li>
-                <li><img src="..." alt="logo-user"></a></li> <!-- present when logged in, else hidden -->
+                <li class="outline-2 transition ease-in-out hover:scale-101 outline-gray-400 hover:outline-white hover:text-stone-300 m-2 p-2 bg-stone-700">
+                    <a href="guess-number.html">
+                        <div>
+                            <h3 class="font-jersey10 text-4xl text-red-600 hover:text-pink-500 text-shadow-md transition ease-in-out">Guess The Number</h3>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, molestiae sit iste ratione at dolorem maiores ipsam nisi accusamus unde voluptatum quia obcaecati ipsa non officiis porro saepe. Illo necessitatibus eius sit. Ipsam et officia esse a quisquam modi fugiat. Cupiditate numquam delectus iure maiores sequi sapiente quia, eveniet voluptatem doloribus, necessitatibus consectetur a eligendi quae deleniti facilis reprehenderit nisi soluta ut! Error magni ea debitis, necessitatibus explicabo quos molestias tempora neque dignissimos quidem odio doloribus. Reiciendis quidem tempora, numquam nemo distinctio, dolor voluptatibus eos maiores obcaecati dignissimos ipsa neque. Et magnam reprehenderit, debitis tempora in impedit assumenda.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="outline-2 transition ease-in-out hover:scale-101 outline-gray-400 hover:outline-white hover:text-stone-300 m-2 p-2 bg-stone-700">
+                    <a href="rock-paper-scissors.html">
+                        <div>
+                            <h3 class="font-jersey10 text-4xl text-red-600 hover:text-pink-500 text-shadow-md transition ease-in-out">Rock Paper Scissors</h3>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa porro impedit qui iusto officia, tempora ipsum inventore, non molestiae totam suscipit! Enim quaerat obcaecati quia! Sit assumenda, eligendi possimus laudantium quaerat, error suscipit numquam impedit autem accusantium aut eos, aspernatur ab esse necessitatibus nesciunt voluptas molestias placeat nam. Necessitatibus sequi saepe iste illo nemo tempora praesentium illum repellat doloribus esse facilis culpa aliquam consequatur animi distinctio, consectetur deserunt vero vel perferendis, a et ipsam. Accusantium mollitia velit voluptatem sequi neque, ut aspernatur illum dignissimos optio reiciendis, itaque quisquam reprehenderit.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="outline-2 transition ease-in-out hover:scale-101 outline-gray-400 hover:outline-white m-2 p-2 bg-stone-700">
+                    <a href="rock-paper-scissors.html">
+                        <div>
+                            <h3 class="font-jersey10 text-4xl text-center text-shadow-md hover:text-stone-300">more . . .</h3>
+                        </div>
+                    </a>
+                </li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>RevoFun! Portal for Edgy Gamers</h1>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita vitae voluptatum dolor voluptatem nostrum blanditiis molestiae eligendi, tenetur voluptate deleniti facere, excepturi voluptatibus, alias aperiam commodi doloribus enim! Vitae sit quidem natus animi eum omnis sapiente iste, cupiditate et, ut tempore assumenda voluptatum neque ipsam possimus dolor laudantium fugit ab dolores repellat. Excepturi nemo harum ducimus illum et odio corporis voluptates, dignissimos rerum cupiditate molestias labore, ab totam dolor ea, commodi sequi tempore ad sapiente nihil ipsum. Illum qui atque inventore eos similique commodi ipsa aliquam a, laboriosam possimus distinctio quibusdam perspiciatis quia aliquid aperiam deserunt laborum quos impedit quisquam?
-        </p>
-    </main>
-    <section>
-        <h2 id="games">Games</h2>
-        <ul>
-            <li>
-                <a href="clicking-game.html">The Clicking Game</a>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, non.
-                </p>
-            </li>
-            <li>
-                <a href="guess-number.html">Guess The Number</a>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab assumenda quaerat corporis.
-                </p>
-            </li>
-            <li>
-                <a href="rock-paper-scissors.html">Rock Paper Scissors</a>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur.
-                </p>
-            </li>
-        </ul>
-    </section>
-    <footer>
-        <div class="footer-socials">
-            <a href="https://github.com/kebejoan" target="_blank">
-                <img src="assets/github-ico.png" alt="github.com/kebejoan"/> <!-- need image -->
-            </a>
-            <a href="https://www.linkedin.com/in/faishal-bejo/" target="_blank">
-                <img src="assets/linkedin-ico.png" alt="linkedin.com/in/faishal-bejo/" /> <!-- need image -->
-            </a>
-            <a href="https://www.instagram.com/kebejoan" target="_blank">
-                <img src="assets/instagram-ico.png" alt="instagram.com/kebejoan"/> <!-- need image -->
-            </a>
-        </div>
-        
-        <div class="footer-copy">
-            <p>&copy;RevoFun by kebejoan, 2025</p>
-        </div>
-    </footer>
+        </section>
+        <footer class="flex justify-between m-2 p-2 text-2xl text-gray-400 font-jersey10">
+            <div class="flex gap-8 footer-socials">
+                <a href="https://github.com/kebejoan" target="_blank">
+                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                        github <!-- need image -->
+                    </h3>
+                </a>
+                <a href="https://www.linkedin.com/in/faishal-bejo/" target="_blank">
+                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                        linkedin <!-- need image -->
+                    </h3>
+                </a>
+                <a href="https://www.instagram.com/kebejoan" target="_blank">
+                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                        instagram <!-- need image -->
+                    </h3>
+                </a>
+            </div>
+            <div>
+                <h3 class="text-white">
+                    made with lauv
+                </h3>
+            </div>
+            <div class="transition ease-in-out text-white">
+                <p>&copy;RevoFun by kebejoan, 2025</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

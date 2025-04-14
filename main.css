@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Jersey+10&family=Workbench&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-workbench: "Workbench", sans-serif;
+    --font-gluten: "Gluten", sans-serif;
+    --font-jersey10: "Jersey 10", sans-serif;
+}
