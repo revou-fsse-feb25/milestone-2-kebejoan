@@ -3,49 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevoFun | Guess The Number</title>
+    <title>revo.fun | Guess The Number</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .scrollbar-none::-webkit-scrollbar {
+        display: none;
+        }
+    </style>
+
 </head>
-<body>
-    <header>
-        <h1>RevoFun</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#games">Games</a>
-                    <ul>
-                        <li><a href="clicking-game.html">The Clicking Game</a></li>
-                        <li><a href="guess-number.html">Guess The Number</a></li>
-                        <li><a href="rock-paper-scissors.html">Rock Paper Scissors</a></li>
-                    </ul>
-                </li>
-                <li><a href="sign-up.html">Sign Up</a></li>
-                <li><a href="log-in.html">Log In</a></li>
-                <li><img src="..." alt="logo-user"></a></li> <!-- present when logged in, else hidden -->
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Guess The Number</h1>
-    </main>
-    <section>
-        
-    </section>
-    <footer>
-        <div class="footer-socials">
-            <a href="https://github.com/kebejoan" target="_blank">
-                <img src="assets/github-ico.png" alt="github.com/kebejoan"/> <!-- need image -->
-            </a>
-            <a href="https://www.linkedin.com/in/faishal-bejo/" target="_blank">
-                <img src="assets/linkedin-ico.png" alt="linkedin.com/in/faishal-bejo/" /> <!-- need image -->
-            </a>
-            <a href="https://www.instagram.com/kebejoan" target="_blank">
-                <img src="assets/instagram-ico.png" alt="instagram.com/kebejoan"/> <!-- need image -->
-            </a>
-        </div>
-        
-        <div class="footer-copy">
-            <p>&copy;RevoFun by kebejoan, 2025</p>
-        </div>
-    </footer>
+<body class="scrollbar-none overflow-y-scroll
+bg-neutral-800 font-jersey10 text-3xl text-white">
+    <div>
+        <header class="sticky top-0 bg-neutral-800 outline-2 outline-stone-900 z-9999">
+            <div class=" p-2 flex justify-between items-center">
+                <div class="drop-shadow-[2px_6px_0px_rgba(0,255,255,1)]">
+                    <a href="index.html">
+                        <h1 class="m-2 ml-4 mb-3 font-jersey10 text-7xl text-red-600 hover:text-pink-500 text-shadow-lg text-shadow-white hover:-translate-y-1 hover:scale-110 drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] transition ease-in-out">
+                            revo.fun
+                        </h1>
+                    </a>
+                </div>
+                <div class="font-jersey10 flex gap-4 text-4xl hover:drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)]">
+                    <nav class="hover:drop-shadow-[4px_2px_0px_rgba(0,255,255,1)]">
+                        <ul class="m-4 flex gap-8 hover:text-black text-shadow-lg">
+                            <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="index.html">Home</a></li>
+                            <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="">Games</a>
+                                <ul>
+                                    <li class="hidden"><a href="clicking-game.html">The Clicking Game</a></li>
+                                    <li class="hidden"><a href="guess-number.html">Guess The Number</a></li>
+                                    <li class="hidden"><a href="rock-paper-scissors.html">Rock Paper Scissors</a></li>
+                                </ul>
+                            </li>
+                            <!-- present when logged in, else hidden -->
+                            <!-- <li><a href="sign-up.html">Sign Up</a></li>
+                            <li><a href="log-in.html">Log In</a></li>
+                            <li><img src="..." alt="logo-user"></a></li>  -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="">
+            <div class=" bg-stone-900 outline-gray-400 hover:outline-white ">
+                <div class="hover:drop-shadow-[-9px_0px_0px_rgba(0,255,255,1)]">
+                    <h1 class=" p-2 text-8xl text-center hover:text-black hover:drop-shadow-[9px_0px_0px_rgba(255,0,255,1)] hover:-translate-y-1 hover:scale-100 text-shadow-lg transition ease-in-out scale-98 text-shadow-yellow-400">
+                        Guess The Number
+                    </h1>
+                </div>
+            </div>
+        </main>
+        <section class="">
+            
+        </section>
+        <footer class="flex justify-between m-2 p-2 text-2xl text-gray-400 font-jersey10">
+            <div class="flex gap-8 footer-socials">
+                <a href="https://github.com/kebejoan" target="_blank">
+                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                        github <!-- need image -->
+                    </h3>
+                </a>
+                <a href="https://www.linkedin.com/in/faishal-bejo/" target="_blank">
+                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                        linkedin <!-- need image -->
+                    </h3>
+                </a>
+                <a href="https://www.instagram.com/kebejoan" target="_blank">
+                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                        instagram <!-- need image -->
+                    </h3>
+                </a>
+            </div>
+            <div>
+                <h3 class="text-white">
+                    made with lauv
+                </h3>
+            </div>
+            <div class="transition ease-in-out text-white">
+                <p>&copy;RevoFun by kebejoan, 2025</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
