@@ -57,31 +57,34 @@
         <div class=" bg-black w-225 h-170 flex justify-center items-center">
             <div class="flex flex-col gap-0">
                 <div class="flex justify-between pl-2 pr-2 w-225 h-10 text-center">
-                    <h2>
-                        TIME: 0
-                    </h2>
-                    <h2>
-                        SCORE: 0
-                    </h2>
+                    <div id="time">
+                        <h2>TIME: 0</h2>
+                    </div>
+                    <div id="score">
+                        <h2>SCORE: 0</h2>
+                    </div>
                 </div>
                 <div class="grid grid-rows-15 grid-cols-9 w-225 h-150 text-center">
-                    <div class="col-start-5 row-start-8">
-                        <div id="click-me">Click Me! To Start The Game</div>
+                    <div class="col-start-5 row-start-7 text-red-700">
+                        <a href="#">
+                            <h2 id="click-me">Click Me!</h2>
+                        </a>
+                        <h2 class="text-white">To Start The Game</h2>
                     </div>
                 </div>
                 <div class="flex gap-2 justify-around w-225 h-10 ">
-                    <div class="hidden">
+                    <a href="#" class="hidden">
                         <h2>EZ</h2>
-                    </div>
-                    <div class="hidden">
+                    </a>
+                    <a href="#" class="hidden">
                         <h2>MEDIUM</h2>
-                    </div>
-                    <div class="hidden">
+                    </a>
+                    <a href="#" class="hidden">
                         <h2>I WANT MY MOMMY</h2>
-                    </div>
-                    <div>
-                        <h2>RESTART</h2>
-                    </div>
+                    </a>
+                    <a href="#" id="restart">
+                        <h2 class="hover:text-red-700">RESTART</h2>
+                    </a>
                 </div>
             </div>
         </div>
