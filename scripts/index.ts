@@ -2,10 +2,66 @@ import ClickingGame from './clicking-game.js';
 // import GuessNumber from "./guess-number";
 // import RockPaperScissors from "./rock-paper-scissors";
 
+enum GameDifficulty {
+    Easy,
+    Medium,
+    Hard
+}
+
+var gameDifficulty: GameDifficulty = GameDifficulty.Easy;
 var clickingGameStart = document.getElementById("clicking-game-start");
 var clickMe = document.getElementById("click-me");
-var clickingGameStartMessage = document.getElementById("clicking-game-start-message");
+var clickingGameStartMessage = document.getElementById("clicking-game-message");
 var clickMeGrid = document.getElementById("click-me-grid");
+var clickDifficultyEasy = document.getElementById("click-difficulty-easy");
+var clickDifficultyMedium = document.getElementById("click-difficulty-medium");
+var clickDifficultyHard = document.getElementById("click-difficulty-hard");
+
+if (clickDifficultyEasy) {
+    clickDifficultyEasy.addEventListener("click", () => {
+        gameDifficulty = GameDifficulty.Easy;
+        if (clickDifficultyEasy) {
+            clickDifficultyEasy.style.color = "red";
+        }
+        if (clickDifficultyMedium) {
+            clickDifficultyMedium.style.color = "white";
+        }
+        if (clickDifficultyHard) {
+            clickDifficultyHard.style.color = "white";
+        }
+    });
+    
+}
+
+if (clickDifficultyMedium) {
+    clickDifficultyMedium.addEventListener("click", () => {
+        gameDifficulty = GameDifficulty.Medium;
+        if (clickDifficultyEasy) {
+            clickDifficultyEasy.style.color = "white";
+        }
+        if (clickDifficultyMedium) {
+            clickDifficultyMedium.style.color = "red";
+        }
+        if (clickDifficultyHard) {
+            clickDifficultyHard.style.color = "white";
+        }
+    });
+}
+
+if (clickDifficultyHard) {
+    clickDifficultyHard.addEventListener("click", () => {
+        gameDifficulty = GameDifficulty.Hard;
+        if (clickDifficultyEasy) {
+            clickDifficultyEasy.style.color = "white";
+        }
+        if (clickDifficultyMedium) {
+            clickDifficultyMedium.style.color = "white";
+        }
+        if (clickDifficultyHard) {
+            clickDifficultyHard.style.color = "red";
+        }
+    });
+}
 
 if (clickingGameStart) {
     clickingGameStart.addEventListener("click", () => {
@@ -18,9 +74,11 @@ if (clickingGameStart) {
         if(clickMe){
             clickMe.classList.remove("hidden");
         }
-        if(clickMeGrid){ //need to move to Class
-            clickMeGrid.style.gridRowStart = "1";
-            clickMeGrid.style.gridColumnStart = "1";
+        if(clickMeGrid){
+            const rowValue : number = Math.floor(Math.random() * 7) + 1;
+            const columnValue : number = Math.floor(Math.random() * 5) + 1;
+            clickMeGrid.style.gridRowStart = rowValue.toString();
+            clickMeGrid.style.gridColumnStart = columnValue.toString();
         }
         new ClickingGame();
     });
