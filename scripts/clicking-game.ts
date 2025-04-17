@@ -41,6 +41,12 @@ class ClickingGame {
     private updateTime() : void{
         if (this.timeHTML){
             this.timeHTML.textContent = "TIME: " + this.timer.toString();
+            if (this.timer === 5){
+                this.timeHTML.classList.add("text-red-700");
+            }
+            if (this.timer < 4 && this.timer > 0)
+                this.timeHTML.classList.add("animate-ping");
+            else this.timeHTML.classList.remove("animate-ping");
         }
     }
 
