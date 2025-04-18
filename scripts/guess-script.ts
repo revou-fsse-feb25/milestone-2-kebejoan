@@ -2,7 +2,6 @@ import GuessNumber from './guess-number.js';
 
 var guessNumberStart = document.getElementById("guess-start");
 var guessNumberForm = document.getElementById("guess-form");
-var guessNumberMessage = document.getElementById("guess-message");
 
 guessNumberStart?.addEventListener("click", () => {
     guessNumberStart?.classList.add("hidden");
