@@ -81,9 +81,11 @@ class GuessNumber {
             case Guess.default:
                 this.message = "Wrong Input!";
         }
-        if (this.guessMessage)
-            this.guessMessage.textContent = this.message;
-        this.updateGuessLeft();
+        if (!this.guessCorrect) {
+            if (this.guessMessage)
+                this.guessMessage.textContent = this.message;
+            this.updateGuessLeft();
+        }
     }
     updateGuessLeft() {
         if (this.guessLeft) {
@@ -99,9 +101,8 @@ class GuessNumber {
         var _a;
         (_a = this.guessInput) === null || _a === void 0 ? void 0 : _a.classList.add("hidden");
         if (this.guessCorrect) {
-            if (this.guessMessage) {
-                this.guessMessage.textContent = `You are correct!\nThe number is ${this.randomNumber}`;
-            }
+            if (this.guessMessage)
+                this.guessMessage.textContent = `You are correct! The number is ${this.randomNumber}`;
         }
         else if (this.guessMessage)
             this.guessMessage.textContent = `Game Over! The number was ${this.randomNumber}`;
