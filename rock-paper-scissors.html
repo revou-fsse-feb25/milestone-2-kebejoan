@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>revo.fun | Rock Paper Scissors</title>
+    <title>revo.fun | Rock Paper Scissor</title>
     <link href="./src/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,80 +13,140 @@
         .scrollbar-none::-webkit-scrollbar {
         display: none;
         }
+        input[type="number"] {
+            -moz-appearance: textfield; /* Firefox */
+            appearance: none; /* Default for other browsers */
+        }
+        /* Remove the spinner buttons in WebKit browsers */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+        }
     </style>
 
 </head>
-<body class="scrollbar-none overflow-y-scroll
-bg-neutral-800 font-jersey10 text-3xl text-white">
-    <div>
-        <header class="sticky top-0 bg-neutral-800 outline-2 outline-stone-900 z-9999">
-            <div class=" p-2 flex justify-between items-center">
-                <div class="drop-shadow-[2px_6px_0px_rgba(0,255,255,1)]">
-                    <a href="index.html">
-                        <h1 class="m-2 ml-4 mb-3 font-jersey10 text-7xl text-red-600 hover:text-pink-500 text-shadow-lg text-shadow-white hover:-translate-y-1 hover:scale-110 drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] transition ease-in-out">
-                            revo.fun
-                        </h1>
-                    </a>
-                </div>
-                <div class="font-jersey10 flex gap-4 text-4xl hover:drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)]">
-                    <nav class="hover:drop-shadow-[4px_2px_0px_rgba(0,255,255,1)]">
-                        <ul class="m-4 flex gap-8 hover:text-black text-shadow-lg">
-                            <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="index.html">Home</a></li>
-                            <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="">Games</a>
-                                <ul>
-                                    <li class="hidden"><a href="clicking-game.html">The Clicking Game</a></li>
-                                    <li class="hidden"><a href="guess-number.html">Guess The Number</a></li>
-                                    <li class="hidden"><a href="rock-paper-scissors.html">Rock Paper Scissors</a></li>
-                                </ul>
-                            </li>
-                            <!-- present when logged in, else hidden -->
-                            <!-- <li><a href="sign-up.html">Sign Up</a></li>
-                            <li><a href="log-in.html">Log In</a></li>
-                            <li><img src="..." alt="logo-user"></a></li>  -->
-                        </ul>
-                    </nav>
-                </div>
+<body class="scrollbar-none overflow-y-scroll bg-stone-900 font-jersey10 text-3xl text-white">
+    <header class="sticky top-0 z-9999 bg-neutral-800  outline-stone-900">
+        <div class=" p-2 grid grid-cols-3 gap-4 items-center">
+            <div class="drop-shadow-[2px_6px_0px_rgba(0,255,255,1)]">
+                <a href="index.html">
+                    <h1 class="m-2 ml-4 mb-3 font-jersey10 text-4xl text-red-600 hover:text-pink-500 text-shadow-lg text-shadow-white hover:-translate-y-1 hover:scale-102 drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] transition ease-in-out">
+                        revo.fun
+                    </h1>
+                </a>
             </div>
-        </header>
-        <main class="">
-            <div class=" bg-stone-900 outline-gray-400 hover:outline-white ">
+            <div class=" outline-gray-400 hover:outline-white ">
                 <div class="hover:drop-shadow-[-9px_0px_0px_rgba(0,255,255,1)]">
-                    <h1 class=" p-2 text-8xl text-center hover:text-black hover:drop-shadow-[9px_0px_0px_rgba(255,0,255,1)] hover:-translate-y-1 hover:scale-100 text-shadow-lg transition ease-in-out scale-98 text-shadow-yellow-400">
-                        Rock Paper Scissors
+                    <h1 class="sticky top-0 p-2 text-6xl text-center hover:text-black hover:drop-shadow-[9px_0px_0px_rgba(255,0,255,1)] hover:-translate-y-1 hover:scale-100 text-shadow-lg transition ease-in-out scale-98 text-shadow-yellow-400">
+                        Rock Paper Scissor
                     </h1>
                 </div>
             </div>
-        </main>
-        <section class="">
-            
-        </section>
-        <footer class="flex justify-between m-2 p-2 text-2xl text-gray-400 font-jersey10">
-            <div class="flex gap-8 footer-socials">
-                <a href="https://github.com/kebejoan" target="_blank">
-                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
-                        github <!-- need image -->
-                    </h3>
-                </a>
-                <a href="https://www.linkedin.com/in/faishal-bejo/" target="_blank">
-                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
-                        linkedin <!-- need image -->
-                    </h3>
-                </a>
-                <a href="https://www.instagram.com/kebejoan" target="_blank">
-                    <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
-                        instagram <!-- need image -->
-                    </h3>
-                </a>
+            <div class="font-jersey10 text-4xl hover:drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] ">
+                <nav class="hover:drop-shadow-[4px_2px_0px_rgba(0,255,255,1)] flex justify-end">
+                    <ul class="m-4 flex gap-8 hover:text-black text-shadow-lg">
+                        <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="index.html">Home</a></li>
+                        <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="">Games</a>
+                            <ul>
+                                <li class="hidden"><a href="clicking-game.html">The Clicking Game</a></li>
+                                <li class="hidden"><a href="guess-number.html">Guess The Number</a></li>
+                                <li class="hidden"><a href="rock-paper-scissor.html">Rock Paper Scissors</a></li>
+                            </ul>
+                        </li>
+                        <!-- present when logged in, else hidden -->
+                        <!-- <li><a href="sign-up.html">Sign Up</a></li>
+                        <li><a href="log-in.html">Log In</a></li>
+                        <li><img src="..." alt="logo-user"></a></li>  -->
+                    </ul>
+                </nav>
             </div>
-            <div>
-                <h3 class="text-white">
+        </div>
+    </header>
+    <main class="mt-4 mb-4 w-screen h-180 flex justify-center items-center ">
+        <div class=" bg-black w-225 h-170 flex justify-center items-center ">
+            <div class="flex flex-col gap-0">
+                <div class="flex flex-col w-225 h-160 justify-center items-center">
+                    <div class="w-225 h-20 flex flex-col justify-center items-center">
+                        <h2 id="game-message" class="text-7xl">Choose Your Weapon</h2>
+                        <h2 id="score-final" class="text-7xl hidden">0 - 0</h2>
+                    </div>
+                    <div id="score-window" class="w-225 h-20 grid grid-cols-3 grid-rows-1 text-center items-center">
+                        <h2 class="text-6xl">PLAYER</h2>
+                        <h2 id="score" class="text-6xl">0 - 0</h2>
+                        <h2 class="text-6xl">COMPUTER</h2>
+                    </div>
+                    <div id="select-window" class="flex justify-around w-225">
+                        <div class="flex flex-col">
+                            <a href="#">
+                                <img id="p-rock" src="./assets/_rock.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
+                            </a>
+                            <a href="#">
+                                <img id="p-paper" src="./assets/_paper.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
+                            </a>
+                            <a href="#">
+                                <img id="p-scissors" src="./assets/_scissors.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out ">
+                            </a>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h2 class="text-8xl">VS</h2>
+                        </div>
+                        <div class="flex flex-col">
+                            <img id="c-rock" src="./assets/rock.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
+                            <img id="c-paper" src="./assets/paper.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60" id="paper">
+                            <img id="c-scissors" src="./assets/scissors.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2 justify-around w-225 h-10 ">
+                    <a href="#" id="difficulty-easy" class="text-red-600">
+                        <h2>EZZZ</h2>
+                    </a>
+                    <a href="#" id="difficulty-medium" class="">
+                        <h2>MEDIUM</h2>
+                    </a>
+                    <a href="#" id="difficulty-hard" class="">
+                        <h2>HARD</h2>
+                    </a>
+                    <a href="rock-paper-scissors.html" id="restart">
+                        <h2 class="hover:text-red-700">RESTART</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+        <footer class="p-4 absolute bottom-0 w-full bg-neutral-800 grid grid-cols-3 justify-between text-2xl text-gray-400 font-jersey10">
+            <div class="">
+                <div class="flex gap-8">
+                    <a href="https://github.com/kebejoan" target="_blank">
+                        <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                            github <!-- need image -->
+                        </h3>
+                    </a>
+                    <a href="https://www.linkedin.com/in/faishal-bejo/" target="_blank">
+                        <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                            linkedin <!-- need image -->
+                        </h3>
+                    </a>
+                    <a href="https://www.instagram.com/kebejoan" target="_blank">
+                        <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                            instagram <!-- need image -->
+                        </h3>
+                    </a>
+                </div>
+            </div>
+            <div class="">
+                <h3 class="text-white text-center">
                     made with lauv
                 </h3>
             </div>
-            <div class="transition ease-in-out text-white">
-                <p>&copy;RevoFun by kebejoan, 2025</p>
+            <div>
+                <p class="text-white text-right">
+                    &copy;RevoFun by kebejoan, 2025
+                </p>
             </div>
         </footer>
-    </div>
+    <script type="module" src="dist/rock-script.js"></script>
+    <script type="module" src="dist/difficulty.js"></script>
 </body>
 </html>

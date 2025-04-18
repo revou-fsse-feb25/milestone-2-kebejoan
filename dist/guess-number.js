@@ -16,6 +16,7 @@ class GuessNumber {
         alert(`For testing purposes, the number is ${this.randomNumber}`);
         this.guessCorrect = false;
         this.guess = Guess.default;
+        this.message = "";
         this.userNumber = -1;
         this.guessLeftValue = 5;
         if (this.guessMessage) {
@@ -66,25 +67,22 @@ class GuessNumber {
                 this.gameOver();
                 break;
             case Guess.low:
-                if (this.guessMessage)
-                    this.guessMessage.textContent = "Too Low.";
+                this.message = "Too Low.";
                 break;
             case Guess.high:
-                if (this.guessMessage)
-                    this.guessMessage.textContent = "Too High.";
+                this.message = "Too High.";
                 break;
             case Guess.closeHigh:
-                if (this.guessMessage)
-                    this.guessMessage.textContent = "Too High, But Close!";
+                this.message = "Too High, But Close!";
                 break;
             case Guess.closeLow:
-                if (this.guessMessage)
-                    this.guessMessage.textContent = "Too Low, But Close!";
+                this.message = "Too Low, But Close!";
                 break;
             case Guess.default:
-                if (this.guessMessage)
-                    this.guessMessage.textContent = "Wrong Input!";
+                this.message = "Wrong Input!";
         }
+        if (this.guessMessage)
+            this.guessMessage.textContent = this.message;
         this.updateGuessLeft();
     }
     updateGuessLeft() {
