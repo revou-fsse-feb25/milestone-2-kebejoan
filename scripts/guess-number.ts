@@ -90,7 +90,7 @@ class GuessNumber{
                 this.message = "Too Low, But Close!";
                 break;
             case Guess.default:
-                this.message = "Wrong Input!";
+                this.message = `Invalid! Guess between 1 and ${this.range}`;
         }
         if (!this.guessCorrect){
             if (this.guessMessage)
