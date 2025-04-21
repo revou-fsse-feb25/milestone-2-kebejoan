@@ -1,5 +1,5 @@
 class ClickingGame {
-    constructor() {
+    constructor(row, col, offsetRow, offsetCol) {
         this.clickMe = document.getElementById("click-me");
         this.clickMeGrid = document.getElementById("click-me-grid");
         this.clickingGameMessage = document.getElementById("clicking-game-message");
@@ -7,6 +7,10 @@ class ClickingGame {
         this.timeHTML = document.getElementById("time");
         this.timer = 10;
         this.score = 1;
+        this.row = row;
+        this.col = col;
+        this.offsetRow = offsetRow;
+        this.offsetCol = offsetCol;
         this.initTimer();
         this.initClickingGame();
     }
@@ -50,8 +54,8 @@ class ClickingGame {
         (_a = this.clickMe) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
             this.updateScore();
             if (this.clickMeGrid) {
-                this.clickMeGrid.style.gridRowStart = (Math.floor(Math.random() * 15) + 1).toString();
-                this.clickMeGrid.style.gridColumnStart = (Math.floor(Math.random() * 9) + 1).toString();
+                this.clickMeGrid.style.gridRowStart = (Math.floor(Math.random() * this.row) + this.offsetRow).toString();
+                this.clickMeGrid.style.gridColumnStart = (Math.floor(Math.random() * this.col) + this.offsetCol).toString();
             }
         });
     }

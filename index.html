@@ -20,7 +20,7 @@
 <body class="scrollbar-none overflow-y-scroll
 bg-neutral-800 font-jersey10 text-3xl text-white">
     <div>
-        <header class="sticky top-0 bg-neutral-800 outline-2 outline-stone-900 z-9999">
+        <header class="sticky top-0 bg-neutral-800 outline-2 outline-stone-900 z-1">
             <div class=" p-2 flex justify-between items-center">
                 <div class="drop-shadow-[2px_6px_0px_rgba(0,255,255,1)]">
                     <a href="index.html">
@@ -49,6 +49,16 @@ bg-neutral-800 font-jersey10 text-3xl text-white">
                 </div>
             </div>
         </header>
+        <!-- FOR DROPDOWN MENU. STILL FELT UNECESSARY -->
+        <!-- <div class="relative inline-block">
+            <div class="absolute outline-2 flex gap-4 justify-around bg-black w-screen z-9999">
+                <div class="outline-2 p-4 m-4 bg-neutral-800 h-10"></div>
+                <div class="outline-2 p-4 m-4 bg-neutral-800 h-10"></div>
+                <div class="outline-2 p-4 m-4 bg-neutral-800 h-10"></div>
+                <div class="outline-2 p-4 m-4 bg-neutral-800 h-10"></div>
+                <div class="outline-2 p-4 m-4 bg-neutral-800 h-10"></div>
+            </div>
+        </div> -->
         <main class="">
             <div class=" bg-stone-900 outline-gray-400 hover:outline-white ">
                 <div class="hover:drop-shadow-[-9px_0px_0px_rgba(0,255,255,1)]">
@@ -62,9 +72,10 @@ bg-neutral-800 font-jersey10 text-3xl text-white">
                 </div>
             </div>
         </main>
-        <section class="">
+        <section id="games" class="">
+            <br><br>
             <div class="">
-                <h2 id="games" class="mt-10 p-2 text-6xl text-center text-shadow-md text-shadow-yellow-800">Available Sketchy Games</h2>
+                <h2 class="mt-10 p-2 text-6xl text-center text-shadow-md text-shadow-yellow-800">Available Sketchy Games</h2>
             </div>
             <ul class="text-justify m-2 p-2 text-stone-500">
                 <li class="outline-2 transition ease-in-out hover:scale-101 outline-gray-400 hover:outline-white hover:text-stone-300 m-2 p-2 bg-stone-700">
@@ -104,7 +115,7 @@ bg-neutral-800 font-jersey10 text-3xl text-white">
                             <div class="text-4xl">
                                 <p class="">Pick your move — rock, paper, or scissors — and face off against the computer!
                                 </p>
-                                <p>It’s a classic showdown of reflexes and luck. First to 5 wins takes the crown. The computer might be fast, but can it outsmart you? Most players win… eventually. Keep calm, think ahead, and throw your best shot!
+                                <p>It's a classic showdown of reflexes and luck. First to 5 wins takes the crown. The computer might be fast, but can it outsmart you? Most players win… eventually. Keep calm, think ahead, and throw your best shot!
                                 </p>
                                 <p>[note: difficulty of the game will be a future feature. For now, it's the best of three only.]
                                 </p>

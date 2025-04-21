@@ -1,3 +1,5 @@
+import { GameDifficulty } from './difficulty.js';
+
 class ClickingGame {
     private clickMe : HTMLElement | null;
     private clickMeGrid : HTMLElement | null;
@@ -6,8 +8,12 @@ class ClickingGame {
     private timeHTML : HTMLElement | null;
     private timer : number;
     private score : number;
+    private row : number;
+    private col : number;
+    private offsetRow : number;
+    private offsetCol : number;
 
-    constructor() {
+    constructor(row : number, col : number, offsetRow : number, offsetCol : number) {
         this.clickMe = document.getElementById("click-me");
         this.clickMeGrid = document.getElementById("click-me-grid");
         this.clickingGameMessage = document.getElementById("clicking-game-message");
@@ -15,6 +21,10 @@ class ClickingGame {
         this.timeHTML = document.getElementById("time");
         this.timer = 10;
         this.score = 1;
+        this.row = row;
+        this.col = col;
+        this.offsetRow = offsetRow;
+        this.offsetCol = offsetCol;
 
         this.initTimer();
         this.initClickingGame();
@@ -61,8 +71,8 @@ class ClickingGame {
         this.clickMe?.addEventListener("click", () => {
             this.updateScore();
             if (this.clickMeGrid){
-                this.clickMeGrid.style.gridRowStart = (Math.floor(Math.random() * 15) + 1).toString();
-                this.clickMeGrid.style.gridColumnStart = (Math.floor(Math.random() * 9) + 1).toString();
+                this.clickMeGrid.style.gridRowStart = (Math.floor(Math.random() * this.row) + this.offsetRow).toString();
+                this.clickMeGrid.style.gridColumnStart = (Math.floor(Math.random() * this.col) + this.offsetCol).toString();
             }
         });
     }

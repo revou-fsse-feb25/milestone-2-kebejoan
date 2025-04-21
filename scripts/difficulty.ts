@@ -1,50 +1,50 @@
-enum GameDifficulty {
+export enum GameDifficulty {
     Easy,
     Medium,
     Hard
 }
 
 export var gameDifficulty: GameDifficulty = GameDifficulty.Easy;
-var clickDifficultyEasy = document.getElementById("difficulty-easy");
-var clickDifficultyMedium = document.getElementById("difficulty-medium");
-var clickDifficultyHard = document.getElementById("difficulty-hard");
+var difficultyEasy = document.getElementById("difficulty-easy");
+var difficultyMedium = document.getElementById("difficulty-medium");
+var difficultyHard = document.getElementById("difficulty-hard");
 
-clickDifficultyEasy?.addEventListener("click", () => {
+difficultyEasy?.addEventListener("click", () => {
     gameDifficulty = GameDifficulty.Easy;
-    if (clickDifficultyEasy) {
-        clickDifficultyEasy.style.color = "red";
+    if (difficultyEasy) {
+        difficultyEasy.style.color = "red";
     }
-    if (clickDifficultyMedium) {
-        clickDifficultyMedium.style.color = "white";
+    if (difficultyMedium) {
+        difficultyMedium.style.color = "white";
     }
-    if (clickDifficultyHard) {
-        clickDifficultyHard.style.color = "white";
+    if (difficultyHard) {
+        difficultyHard.style.color = "white";
     }
 });
     
 
-clickDifficultyMedium?.addEventListener("click", () => {
+difficultyMedium?.addEventListener("click", () => {
     gameDifficulty = GameDifficulty.Medium;
-    if (clickDifficultyEasy) {
-        clickDifficultyEasy.style.color = "white";
+    if (difficultyEasy) {
+        difficultyEasy.style.color = "white";
     }
-    if (clickDifficultyMedium) {
-        clickDifficultyMedium.style.color = "red";
+    if (difficultyMedium) {
+        difficultyMedium.style.color = "red";
     }
-    if (clickDifficultyHard) {
-        clickDifficultyHard.style.color = "white";
+    if (difficultyHard) {
+        difficultyHard.style.color = "white";
     }
 });
 
-clickDifficultyHard?.addEventListener("click", () => {
+difficultyHard?.addEventListener("click", () => {
     gameDifficulty = GameDifficulty.Hard;
-    if (clickDifficultyEasy) {
-        clickDifficultyEasy.style.color = "white";
+    if (difficultyEasy) {
+        difficultyEasy.style.color = "white";
     }
-    if (clickDifficultyMedium) {
-        clickDifficultyMedium.style.color = "white";
+    if (difficultyMedium) {
+        difficultyMedium.style.color = "white";
     }
-    if (clickDifficultyHard) {
-        clickDifficultyHard.style.color = "red";
+    if (difficultyHard) {
+        difficultyHard.style.color = "red";
     }
 });
