@@ -1,11 +1,13 @@
 import GuessNumber from './guess-number.js';
+import Difficulty from './guess-difficulty.js';
+import { gameDifficulty } from './difficulty.js';
 
-var guessNumberStart = document.getElementById("guess-start");
-var guessNumberForm = document.getElementById("guess-form");
+let guessNumberStart = document.getElementById("guess-start");
+let guessNumberForm = document.getElementById("guess-form");
+let guess = new Difficulty();
 
 guessNumberStart?.addEventListener("click", () => {
     guessNumberStart?.classList.add("hidden");
     guessNumberForm?.classList.remove("hidden");
-    new GuessNumber(//input enum GameDifficulty here later
-    );
+    new GuessNumber(guess.range(gameDifficulty));
 });

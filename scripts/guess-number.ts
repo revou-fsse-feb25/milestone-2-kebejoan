@@ -17,20 +17,22 @@ class GuessNumber{
     private guessCorrect : boolean;
     private guess : Guess;
     private message : string;
+    private range : number;
 
-    constructor(){
+    constructor(range : number){
         this.guessMessage = document.getElementById("guess-message");
         this.guessLeft = document.getElementById("guess-left");
         this.guessInput = document.getElementById("guess-input") as HTMLInputElement;
-        this.randomNumber = Math.floor(Math.random() * 100) + 1;
-        alert(`For testing purposes, the number is ${this.randomNumber}`);
         this.guessCorrect = false;
         this.guess = Guess.default;
         this.message = "";
         this.userNumber = -1;
         this.guessLeftValue = 5;
+        this.range = range;
+        this.randomNumber = Math.floor(Math.random() * this.range) + 1;
+        alert(`For testing purposes, the number is ${this.randomNumber}`);
         if (this.guessMessage){
-            this.guessMessage.textContent = "Guess a number between 1 and 100"; //difficulty will change the range
+            this.guessMessage.textContent = `Guess a number between 1 and ${this.range}`; //difficulty will change the range
         }
         this.updateGuessLeft();
         this.waitForEnter();
