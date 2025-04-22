@@ -21,7 +21,7 @@ const update = new Update();
 const choices = [Choice.rock, Choice.paper, Choice.scissors];
 const winCondition = [Choice.scissors, Choice.rock, Choice.paper];
 class RockPaperScissors {
-    constructor() {
+    constructor(rounds) {
         this.gameMessage = document.getElementById("game-message");
         this.playerRock = document.getElementById("p-rock");
         this.playerPaper = document.getElementById("p-paper");
@@ -36,6 +36,7 @@ class RockPaperScissors {
         this.computerChoice = Choice.default;
         this.randomIndex = -1;
         this.message = "";
+        this.rounds = rounds;
         this.generateComputerChoice();
         this.checkChoices();
     }
@@ -67,11 +68,11 @@ class RockPaperScissors {
         else
             winCondition[player] === computer ? this.resultUpdate(Result.win) : this.resultUpdate(Result.loose);
         setTimeout(() => {
-            if (this.playerScore < 3 && this.computerScore < 3) {
+            if (this.playerScore < this.rounds && this.computerScore < this.rounds) {
                 this.generateComputerChoice();
                 update.newRound();
             }
-            else if (this.playerScore === 3)
+            else if (this.playerScore === this.rounds)
                 this.gameOver(Winner.player);
             else
                 this.gameOver(Winner.computer);

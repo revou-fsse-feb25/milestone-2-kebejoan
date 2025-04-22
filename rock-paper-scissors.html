@@ -67,17 +67,21 @@
     <main class="mt-4 mb-4 w-screen h-180 flex justify-center items-center ">
         <div class=" bg-black w-225 h-170 flex justify-center items-center ">
             <div class="flex flex-col gap-0">
-                <div class="flex flex-col w-225 h-160 justify-center items-center">
+                <div id="game-window"class="flex flex-col w-225 h-160 justify-center items-center">
                     <div class="w-225 h-20 flex flex-col justify-center items-center">
-                        <h2 id="game-message" class="text-7xl">Choose Your Weapon</h2>
+                        <h2 id="game-message" class="text-7xl hidden">Choose Your Weapon</h2> <!-- CHOOSE YOUR WEAPON -->
+                        <h2 id="start-message" class="text-7xl">First to 3 Wins</h2> <!-- CHOOSE YOUR WEAPON -->
                         <h2 id="score-final" class="text-7xl hidden">0 - 0</h2>
+                        <a id="start-button" class="" href="#">
+                            <h2 class="text-5xl hover:text-red-600">Click To Start!</h2>
+                        </a>
                     </div>
-                    <div id="score-window" class="w-225 h-20 grid grid-cols-3 grid-rows-1 text-center items-center">
+                    <div id="score-window" class="w-225 h-20 grid grid-cols-3 grid-rows-1 text-center items-center hidden">
                         <h2 class="text-6xl">PLAYER</h2>
                         <h2 id="score" class="text-6xl">0 - 0</h2>
                         <h2 class="text-6xl">COMPUTER</h2>
                     </div>
-                    <div id="select-window" class="flex justify-around w-225">
+                    <div id="select-window" class="flex justify-around w-225 hidden">
                         <div class="flex flex-col">
                             <a href="#">
                                 <img id="p-rock" src="./assets/r_rock.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
