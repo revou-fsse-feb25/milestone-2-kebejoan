@@ -1,6 +1,6 @@
 import ClickingGame from './clicking-game.js';
 import Difficulty from './clicking-difficulty.js';
-import { gameDifficulty } from './difficulty.js';
+import { gameDifficulty } from '../difficulty.js';
 
 let clickingGameStart = document.getElementById("clicking-game-start");
 let clickMe = document.getElementById("click-me");

@@ -76,30 +76,34 @@
                             <h2 class="text-5xl hover:text-red-600">Click To Start!</h2>
                         </a>
                     </div>
-                    <div id="score-window" class="w-225 h-20 grid grid-cols-3 grid-rows-1 text-center items-center hidden">
-                        <h2 class="text-6xl">PLAYER</h2>
-                        <h2 id="score" class="text-6xl">0 - 0</h2>
-                        <h2 class="text-6xl">COMPUTER</h2>
+                    <div id="score-window" class="hidden">
+                        <div class="w-225 h-20 grid grid-cols-3 grid-rows-1 text-center items-center">
+                            <h2 class="text-6xl">PLAYER</h2>
+                            <h2 id="score" class="text-6xl">0 - 0</h2>
+                            <h2 class="text-6xl">COMPUTER</h2>
+                        </div>
                     </div>
-                    <div id="select-window" class="flex justify-around w-225 hidden">
-                        <div class="flex flex-col">
-                            <a href="#">
-                                <img id="p-rock" src="./assets/r_rock.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
-                            </a>
-                            <a href="#">
-                                <img id="p-paper" src="./assets/r_paper.png" alt="paper" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
-                            </a>
-                            <a href="#">
-                                <img id="p-scissors" src="./assets/r_scissors.png" alt="scissors" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out ">
-                            </a>
-                        </div>
-                        <div class="flex flex-col justify-center">
-                            <h2 class="text-8xl">VS</h2>
-                        </div>
-                        <div class="flex flex-col">
-                            <img id="c-rock" src="./assets/rock.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
-                            <img id="c-paper" src="./assets/paper.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60" id="paper">
-                            <img id="c-scissors" src="./assets/scissors.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
+                    <div id="select-window" class="hidden">
+                        <div class="flex justify-around w-225">
+                            <div class="flex flex-col">
+                                <a href="#">
+                                    <img id="p-rock" src="./assets/r_rock.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
+                                </a>
+                                <a href="#">
+                                    <img id="p-paper" src="./assets/r_paper.png" alt="paper" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
+                                </a>
+                                <a href="#">
+                                    <img id="p-scissors" src="./assets/r_scissors.png" alt="scissors" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out ">
+                                </a>
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <h2 class="text-8xl">VS</h2>
+                            </div>
+                            <div class="flex flex-col">
+                                <img id="c-rock" src="./assets/rock.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
+                                <img id="c-paper" src="./assets/paper.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60" id="paper">
+                                <img id="c-scissors" src="./assets/scissors.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -151,7 +155,7 @@
                 </p>
             </div>
         </footer>
-    <script type="module" src="dist/rock-script.js"></script>
+    <script type="module" src="dist/Rock-Paper-Scissors/rock-script.js"></script>
     <script type="module" src="dist/difficulty.js"></script>
 </body>
 </html>

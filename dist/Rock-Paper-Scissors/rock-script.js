@@ -1,6 +1,6 @@
 import RockPaperScissors from './rock-paper-scissors.js';
 import Difficulty from './rock-difficulty.js';
-import { gameDifficulty } from './difficulty.js';
+import { gameDifficulty } from '../difficulty.js';
 let startButton = document.getElementById("start-button");
 let startMessage = document.getElementById("start-message");
 let gameWindow = document.getElementById("game-window");

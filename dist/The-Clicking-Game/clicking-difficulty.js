@@ -1,4 +1,4 @@
-import { GameDifficulty } from "./difficulty.js";
+import { GameDifficulty } from "../difficulty.js";
 var ClickingGameDifficulty;
 (function (ClickingGameDifficulty) {
     ClickingGameDifficulty[ClickingGameDifficulty["EasyRow"] = 6] = "EasyRow";

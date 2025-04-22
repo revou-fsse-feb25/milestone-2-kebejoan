@@ -1,4 +1,4 @@
-import { GameDifficulty } from "./difficulty.js"
+import { GameDifficulty } from "../difficulty.js"
 
 enum ClickingGameDifficulty {
     EasyRow = 6,

@@ -1,4 +1,4 @@
-import { GameDifficulty } from './difficulty.js';
+import { GameDifficulty } from '../difficulty.js';
 
 class ClickingGame {
     private clickMe : HTMLElement | null;
