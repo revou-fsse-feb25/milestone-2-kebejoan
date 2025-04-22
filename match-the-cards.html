@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>revo.fun | Match The Cards</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="assets/Rock-Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .scrollbar-none::-webkit-scrollbar {
+        display: none;
+        }
+    </style>
+
+</head>
+<body class="scrollbar-none overflow-y-scroll bg-stone-900 font-jersey10 text-3xl text-white">
+    <header class="sticky top-0 z-9999 bg-neutral-800 outline-2 outline-stone-900">
+        <div class=" p-2 grid grid-cols-3 gap-4 items-center">
+            <div class="drop-shadow-[2px_6px_0px_rgba(0,255,255,1)]">
+                <a href="index.html">
+                    <h1 class="m-2 ml-4 mb-3 font-jersey10 text-4xl text-red-600 hover:text-pink-500 text-shadow-lg text-shadow-white hover:-translate-y-1 hover:scale-102 drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] transition ease-in-out">
+                        revo.fun
+                    </h1>
+                </a>
+            </div>
+            <div class=" outline-gray-400 hover:outline-white ">
+                <div class="hover:drop-shadow-[-9px_0px_0px_rgba(0,255,255,1)]">
+                    <h1 class="sticky top-0 p-2 text-6xl text-center hover:text-black hover:drop-shadow-[9px_0px_0px_rgba(255,0,255,1)] hover:-translate-y-1 hover:scale-100 text-shadow-lg transition ease-in-out scale-98 text-shadow-yellow-400">
+                        UNDER CONSTRUCTION
+                    </h1>
+                </div>
+            </div>
+            <div class="font-jersey10 text-4xl hover:drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] ">
+                <nav class="hover:drop-shadow-[4px_2px_0px_rgba(0,255,255,1)] flex justify-end">
+                    <ul class="m-4 flex gap-8 hover:text-black text-shadow-lg">
+                        <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="index.html">Home</a></li>
+                        <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="">Games</a>
+                            <ul>
+                                <li class="hidden"><a href="clicking-game.html">The Clicking Game</a></li>
+                                <li class="hidden"><a href="guess-number.html">Guess The Number</a></li>
+                                <li class="hidden"><a href="rock-paper-scissors.html">Rock Paper Scissors</a></li>
+                                <li class="hidden"><a href="rock-paper-scissors.html">Match The Cards</a></li>
+                            </ul>
+                        </li>
+                        <!-- present when logged in, else hidden -->
+                        <!-- <li><a href="sign-up.html">Sign Up</a></li>
+                        <li><a href="log-in.html">Log In</a></li>
+                        <li><img src="..." alt="logo-user"></a></li>  -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="mt-4 mb-4 w-screen h-180 flex justify-center items-center">
+        <div class=" bg-black w-225 h-170 flex flex-col justify-between items-center">
+            <div class="flex justify-between pl-2 pr-2 w-225 h-10 text-center">
+                <div id="time">
+                    <h2>TIME: 0</h2>
+                </div>
+                <div id="TRIES">
+                    <h2>TRIES: 0</h2>
+                </div>
+            </div>
+            <div id="start-game" class="hidden">
+                <div class="flex flex-col items-center gap-5">
+                    <div class="text-7xl">
+                        <h2>Match 16 Cards!</h2>
+                    </div>
+                    <div class="text-4xl hover:text-red-600">
+                        <a href="#" id="start-button">
+                            <h2>Click To Start!</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="game-window" class="">
+                <div class="flex justify-center items-center">
+                    <div id="main-grid" class="grid grid-rows-4 grid-cols-4 text-center gap-4 text-7xl">
+                        <!-- 
+                        <div class="col-start-1 row-start-1 w-20 h-32 flex justify-center items-center bg-red-700 rounded-md p-4">
+                            <div class="text-5xl">%</div>
+                        </div>
+                        <div class=" w-20 h-32 flex justify-center items-center bg-neutral-400 outline-2 outline-red-700 rounded-md">
+                            <div class="flex flex-col justify-between w-19 h-31 p-1">
+                                <div class="flex justify-start">
+                                    <div>1</div>
+                                </div>
+                                <div class="">A</div>
+                                <div class="flex justify-end">
+                                    <div>1</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" w-20 h-32 flex justify-center items-center bg-red-700 rounded-md p-4">
+                            <div class="">A</div>
+                        </div>
+                        <div class=" w-20 h-32 flex justify-center items-center bg-red-700 rounded-md p-4">
+                            <div class="">A</div>
+                        </div>
+                        <div class=" w-20 h-32 flex justify-center items-center bg-red-700 rounded-md p-4">
+                            <div class="">A</div>
+                        </div>
+                        <div class=" w-20 h-32 flex justify-center items-center bg-red-700 rounded-md p-4">
+                            <div class="">A</div>
+                        </div>
+                        <div class=" w-20 h-32 flex justify-center items-center bg-red-700 rounded-md p-4">
+                            <div class="">A</div>
+                        </div> 
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2 justify-around w-225 h-10 ">
+                <a href="#" id="difficulty-easy" class="text-red-600">
+                    <h2>EZZZ</h2>
+                </a>
+                <a href="#" id="difficulty-medium" class="">
+                    <h2>MEDIUM</h2>
+                </a>
+                <a href="#" id="difficulty-hard" class="">
+                    <h2>HARD</h2>
+                </a>
+                <a href="clicking-game.html" id="restart">
+                    <h2 class="hover:text-red-700">RESTART</h2>
+                </a>
+            </div>
+        </div>
+    </main>
+        <footer class="p-4 absolute bottom-0 w-full bg-neutral-800 grid grid-cols-3 justify-between text-2xl text-gray-400 font-jersey10">
+            <div class="">
+                <div class="flex gap-8">
+                    <a href="https://github.com/kebejoan" target="_blank">
+                        <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                            github <!-- need image -->
+                        </h3>
+                    </a>
+                    <a href="https://www.linkedin.com/in/faishal-bejo/" target="_blank">
+                        <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                            linkedin <!-- need image -->
+                        </h3>
+                    </a>
+                    <a href="https://www.instagram.com/kebejoan" target="_blank">
+                        <h3 class="transition ease-in-out hover:scale-105 hover:text-white">
+                            instagram <!-- need image -->
+                        </h3>
+                    </a>
+                </div>
+            </div>
+            <div class="">
+                <h3 class="text-white text-center">
+                    made with lauv
+                </h3>
+            </div>
+            <div>
+                <p class="text-white text-right">
+                    &copy;RevoFun by kebejoan, 2025
+                </p>
+            </div>
+        </footer>
+    <script type="module" src="dist/Match-The-Cards/match-script.js"></script>
+    <script type="module" src="dist/difficulty.js"></script>
+</body>
+</html>
