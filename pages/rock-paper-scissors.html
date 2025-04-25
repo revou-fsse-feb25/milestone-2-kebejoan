@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>revo.fun | Rock Paper Scissor</title>
-    <link href="./src/output.css" rel="stylesheet">
+    <link href="../src/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="assets/Rock-Logo.png">
+    <link rel="icon" type="image/png" href="../assets/Rock-Logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap" rel="stylesheet">
 
     <style>
@@ -31,7 +31,7 @@
     <header class="sticky top-0 z-9999 bg-neutral-800  outline-stone-900">
         <div class=" p-2 grid grid-cols-3 gap-4 items-center">
             <div class="drop-shadow-[2px_6px_0px_rgba(0,255,255,1)]">
-                <a href="index.html">
+                <a href="../index.html">
                     <h1 class="m-2 ml-4 mb-3 font-jersey10 text-4xl text-red-600 hover:text-pink-500 text-shadow-lg text-shadow-white hover:-translate-y-1 hover:scale-102 drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] transition ease-in-out">
                         revo.fun
                     </h1>
@@ -47,12 +47,12 @@
             <div class="font-jersey10 text-4xl hover:drop-shadow-[-2px_-2px_0px_rgba(255,255,0,1)] ">
                 <nav class="hover:drop-shadow-[4px_2px_0px_rgba(0,255,255,1)] flex justify-end">
                     <ul class="m-4 flex gap-8 hover:text-black text-shadow-lg">
-                        <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="index.html">Home</a></li>
+                        <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="../index.html">Home</a></li>
                         <li class="hover:text-pink-500 hover:-translate-y-1 hover:scale-110 transition ease-in-out"><a href="">Games</a>
                             <ul>
-                                <li class="hidden"><a href="clicking-game.html">The Clicking Game</a></li>
-                                <li class="hidden"><a href="guess-number.html">Guess The Number</a></li>
-                                <li class="hidden"><a href="rock-paper-scissor.html">Rock Paper Scissors</a></li>
+                                <li class="hidden"><a href="../pages/clicking-game.html">The Clicking Game</a></li>
+                                <li class="hidden"><a href="../pages/guess-number.html">Guess The Number</a></li>
+                                <li class="hidden"><a href="../pages/rock-paper-scissor.html">Rock Paper Scissors</a></li>
                             </ul>
                         </li>
                         <!-- present when logged in, else hidden -->
@@ -87,22 +87,22 @@
                         <div class="flex justify-around w-225">
                             <div class="flex flex-col">
                                 <a href="#">
-                                    <img id="p-rock" src="./assets/r_rock.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
+                                    <img id="p-rock" src="../assets/r_rock.png" alt="rock" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
                                 </a>
                                 <a href="#">
-                                    <img id="p-paper" src="./assets/r_paper.png" alt="paper" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
+                                    <img id="p-paper" src="../assets/r_paper.png" alt="paper" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out">
                                 </a>
                                 <a href="#">
-                                    <img id="p-scissors" src="./assets/r_scissors.png" alt="scissors" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out ">
+                                    <img id="p-scissors" src="../assets/r_scissors.png" alt="scissors" class="w-40 h-40 grayscale-100 animate-pulse hover:animate-none hover:grayscale-0 hover:-translate-y-2 hover:scale-105 transition ease-in-out ">
                                 </a>
                             </div>
                             <div class="flex flex-col justify-center">
                                 <h2 class="text-8xl">VS</h2>
                             </div>
                             <div class="flex flex-col">
-                                <img id="c-rock" src="./assets/rock.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
-                                <img id="c-paper" src="./assets/paper.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60" id="paper">
-                                <img id="c-scissors" src="./assets/scissors.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
+                                <img id="c-rock" src="../assets/rock.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
+                                <img id="c-paper" src="../assets/paper.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60" id="paper">
+                                <img id="c-scissors" src="../assets/scissors.png" alt="rock" class="w-40 h-40 grayscale-100 opacity-60">
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                 </p>
             </div>
         </footer>
-    <script type="module" src="dist/Rock-Paper-Scissors/rock-script.js"></script>
-    <script type="module" src="dist/difficulty.js"></script>
+    <script type="module" src="../dist/Rock-Paper-Scissors/rock-script.js"></script>
+    <script type="module" src="../dist/difficulty.js"></script>
 </body>
 </html>
