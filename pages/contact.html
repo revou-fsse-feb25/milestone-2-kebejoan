@@ -66,7 +66,7 @@
     </header>
     <main class="mt-4 mb-4 w-screen h-180 flex justify-center items-center">
         <div class=" bg-black w-225 h-170 flex justify-center items-center">
-            <div class="flex flex-col gap-0 text-center ">
+            <div class="flex flex-col gap-8 text-center ">
                 <div>
                     <h2 class="text-6xl">
                         Wants some more games?
@@ -78,35 +78,33 @@
                     </h2>
                 </div>
                 <div>
-                    <form action="backend.com" method="POST" class=".contact">
-                        <div class="contact-name">
-                            <label for="input-name">Name</label>
-                            <input type="text" id="input-name" name="name-input" placeholder="What's your name" required />
-                        </div>
-                    
-                        <div class="contact-email">
-                            <label for="input-email">Email</label>
-                            <input type="email" id="input-email" name="email-input" placeholder="What's your email" required />
-                        </div>
-                    
-                        <div class="contact-subject">
-                            <label for="subject-contact">Subject</label>
-                            <select name="subject" id="subject-contact" placeholder="Select a subject" required>
-                                <option value="" disabled selected>Select an option</option>
-                                <option value="tech-query">Hey I want to ask something technical</option>
-                                <option value="collab">Let's collaborate on a project</option>
-                                <option value="vacancy">I have a role for you</option>
-                                <option value="others">Others - Let's have a drink!</option>
-                            </select>
-                        </div>
-                    
-                        <div class="contact-concern">
-                            <label for="concerns-contact">Your concerns</label>
-                            <textarea name="concerns" id="concerns-contact" required></textarea>
-                        </div>
-                    
-                        <div class="contact-submit">
-                            <input type="submit" value="Submit" id="submit-contact" />
+                    <form action="backend.com" method="POST">
+                        <div class="flex flex-col gap-6 w-200">
+                            <div class="grid grid-rows-1 grid-cols-4">
+                                    <label for="input-name">Name</label>
+                                    <input class="bg-neutral-600 h-10 text-center rounded-md col-start-2 col-end-5 items center" type="text" id="input-name" name="name-input" placeholder="What's your name" required />
+                            </div>
+                            <div class="grid grid-rows-1 grid-cols-4">
+                                <label for="input-email">Email</label>
+                                <input class="bg-neutral-600 h-10 text-center rounded-md col-start-2 col-end-5 items center" type="email" id="input-email" name="email-input" placeholder="What's your email" required />
+                            </div>
+                            <div class="grid grid-rows-1 grid-cols-4">
+                                <label for="subject-contact">Subject</label>
+                                <select class="bg-neutral-600 h-10 text-center rounded-md col-start-2 col-end-5 items center" name="subject" id="subject-contact" placeholder="Select a subject" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="tech-query">Hey I want to ask something technical</option>
+                                    <option value="collab">Let's make a game!</option>
+                                    <option value="vacancy">I have a role for you</option>
+                                    <option value="others">Others - Let's have a drink!</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-rows-1 grid-cols-4">
+                                <label class="text-wrap" for="concerns-contact">Your concerns</label>
+                                <textarea class="bg-neutral-600 h-30 text-center rounded-md col-start-2 col-end-5 items center" name="concerns" id="concerns-contact" required></textarea>
+                            </div>
+                            <div class="flex justify-end hover:text-red-600">
+                                <input class="cursor-pointer" type="submit" value="Submit" id="submit-contact" />
+                            </div>
                         </div>
                     </form>
                 </div>
