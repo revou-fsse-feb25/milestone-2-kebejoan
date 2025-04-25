@@ -41,7 +41,7 @@ startButton?.addEventListener("click", () => {
         !score ||
         !scoreFinal
     )
-    throw new Error("Missing required input elements for the game.")
+    throw new Error("Missing required input elements for the game.");
 
     new RockPaperScissors
     (difficulty.rounds(gameDifficulty),
