@@ -1,126 +1,107 @@
-enum Guess{
+enum Guess {
     correct,
     low,
     high,
     closeHigh,
     closeLow,
-    default
+    invalid
 }
 
-class GuessNumber{
-    private guessMessage : HTMLElement | null;
-    private guessLeft : HTMLElement | null;
-    private guessInput : HTMLInputElement | null;
-    private guessLeftValue : number;
-    private userNumber : number;
-    private randomNumber : number;
-    private guessCorrect : boolean;
-    private guess : Guess;
-    private message : string;
-    private range : number;
-    private invalidInput : number;
-    private closeRange : number;
+class GuessNumber {
+    private guessCorrect = false;
+    private guessLeftValue = 5;
+    private readonly closeRange = 10;
+    private readonly invalidInput = -999999;
+    private randomNumber: number;
 
-    constructor(range : number){
-        this.guessMessage = document.getElementById("guess-message");
-        this.guessLeft = document.getElementById("guess-left");
-        this.guessInput = document.getElementById("guess-input") as HTMLInputElement;
-        this.guessCorrect = false;
-        this.guess = Guess.default;
-        this.message = "";
-        this.userNumber = -1;
-        this.guessLeftValue = 5;
-        this.invalidInput = -999999;
-        this.closeRange = 10;
-        this.range = range;
-        this.randomNumber = Math.floor(Math.random() * this.range) + 1;
-        if (this.guessMessage){
-            this.guessMessage.textContent = `Guess a number between 1 and ${this.range}`; //difficulty will change the range
-        }
+    constructor(
+            private range: number,
+            private guessMessage: HTMLElement,
+            private guessLeft: HTMLElement,
+            private guessInput: HTMLInputElement
+        ) {
+        this.randomNumber = this.generateRandomNumber();
+        this.guessMessage.textContent = `Guess a number between 1 and ${this.range}`;
         this.updateGuessLeft();
         this.waitForEnter();
     }
 
-    private waitForEnter() : void{
-        this.guessInput?.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                this.userNumber = this.guessInput?.valueAsNumber || this.invalidInput; 
-                this.compareNumbers();
-                if (this.guessInput)
-                    this.guessInput.value = "";
-            }
+    private generateRandomNumber(): number {
+        return Math.floor(Math.random() * this.range) + 1;
+    }
+
+    private waitForEnter(): void {
+        this.guessInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            const userNumber = this.guessInput.valueAsNumber || this.invalidInput;
+            const result = this.compareNumbers(userNumber);
+            this.handleResult(result);
+            this.guessInput.value = "";
+        }
         });
     }
 
-    private compareNumbers() : void{
-        if (this.userNumber === this.invalidInput){ 
-            this.guess = Guess.default;
-        } 
-        else if (this.userNumber > this.randomNumber){
-            if (this.userNumber - this.randomNumber < this.closeRange) 
-                this.guess = Guess.closeHigh;
-            else this.guess = Guess.high;
-        } 
-        else if (this.userNumber < this.randomNumber){
-            if (this.randomNumber - this.userNumber < this.closeRange)
-                this.guess = Guess.closeLow;
-            else this.guess = Guess.low;
-        }
-        else this.guess = Guess.correct;
+    private compareNumbers(userNumber: number): Guess {
+        if (userNumber === this.invalidInput)
+            return Guess.invalid;
 
-        if (this.guess != Guess.default)
+        if (userNumber === this.randomNumber)
+            return Guess.correct;
+
+        const diff = Math.abs(userNumber - this.randomNumber);
+        const isHigh = userNumber > this.randomNumber;
+
+        if (diff < this.closeRange)
+            return isHigh ? Guess.closeHigh : Guess.closeLow;
+
+        return isHigh ? Guess.high : Guess.low;
+    }
+
+    private handleResult(guess: Guess): void {
+        if (guess !== Guess.invalid) {
             this.guessLeftValue--;
-        this.checkResult(this.guess);
+        }
+
+        if (guess === Guess.correct) {
+            this.guessCorrect = true;
+            this.endGame(true);
+            return;
+        }
+
+        this.guessMessage.textContent = this.getGuessMessage(guess);
+        this.updateGuessLeft();
     }
 
-    private checkResult(theGuess : Guess) : void{
-        switch (theGuess){
-            case Guess.correct:
-                this.guessCorrect = true;
-                this.gameOver();
-                break;
-            case Guess.low:
-                this.message = "Too Low.";
-                break;
-            case Guess.high:
-                this.message = "Too High.";
-                break;
-            case Guess.closeHigh:
-                this.message = "Too High, But Close!";
-                break;
-            case Guess.closeLow:
-                this.message = "Too Low, But Close!";
-                break;
-            case Guess.default:
-                this.message = `Invalid! Guess between 1 and ${this.range}`;
+    private getGuessMessage(guess: Guess): string {
+        const messages: Record<Guess, string> = {
+            [Guess.correct]: "", // never shown; handled separately
+            [Guess.low]: "Too Low.",
+            [Guess.high]: "Too High.",
+            [Guess.closeHigh]: "Too High, But Close!",
+            [Guess.closeLow]: "Too Low, But Close!",
+            [Guess.invalid]: `Invalid! Guess between 1 and ${this.range}`,
+        };
+        return messages[guess];
+    }
+
+    private updateGuessLeft(): void {
+        if (this.guessLeftValue < 3) {
+            this.guessLeft.classList.add("text-red-700");
         }
-        if (!this.guessCorrect){
-            if (this.guessMessage)
-                this.guessMessage.textContent = this.message;
-            this.updateGuessLeft();
+        this.guessLeft.textContent = `GUESS LEFT : ${this.guessLeftValue}`;
+
+        if (this.guessLeftValue === 0 && !this.guessCorrect) {
+            this.endGame(false);
         }
     }
 
-    private updateGuessLeft() : void{
-        if (this.guessLeft){
-            if (this.guessLeftValue < 3){
-                this.guessLeft.classList.add("text-red-700");
-            }
-            this.guessLeft.textContent = `GUESS LEFT : ${this.guessLeftValue}`;
-        }
-        if (this.guessLeftValue === 0)
-            this.gameOver();
-    }
-
-    private gameOver() : void{
-        this.guessInput?.classList.add("hidden");
-        if (this.guessCorrect){
-            if (this.guessMessage)
-                this.guessMessage.textContent = `You are correct! The number is ${this.randomNumber}`;
-        }
-        else if (this.guessMessage) 
-            this.guessMessage.textContent = `Game Over! The number was ${this.randomNumber}`;
+    private endGame(won: boolean): void {
+        this.guessInput.classList.add("hidden");
+        this.guessMessage.textContent = won
+        ? `You are correct! The number is ${this.randomNumber}`
+        : `Game Over! The number was ${this.randomNumber}`;
     }
 }
+
 export default GuessNumber;
