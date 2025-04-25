@@ -1,3 +1,5 @@
+import getRandomNumber from '../utils.js';
+
 class ClickingGame {
     private timer : number;
     private score : number;
@@ -59,8 +61,8 @@ class ClickingGame {
     private checkClick() : void{
         this.clickMe.addEventListener("click", () => {
             this.updateScore();
-            this.clickMeGrid.style.gridRowStart = (Math.floor(Math.random() * this.row) + this.offsetRow).toString();
-            this.clickMeGrid.style.gridColumnStart = (Math.floor(Math.random() * this.col) + this.offsetCol).toString();
+            this.clickMeGrid.style.gridRowStart = (getRandomNumber(this.row, this.offsetRow)).toString();
+            this.clickMeGrid.style.gridColumnStart = (getRandomNumber(this.col, this.offsetCol)).toString();
         });
     }
 

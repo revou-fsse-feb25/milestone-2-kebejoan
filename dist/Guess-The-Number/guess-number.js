@@ -1,3 +1,4 @@
+import getRandomNumber from "../utils.js";
 var Guess;
 (function (Guess) {
     Guess[Guess["correct"] = 0] = "correct";
@@ -17,13 +18,10 @@ class GuessNumber {
         this.guessLeftValue = 5;
         this.closeRange = 10;
         this.invalidInput = -999999;
-        this.randomNumber = this.generateRandomNumber();
+        this.randomNumber = getRandomNumber(this.range, 1);
         this.guessMessage.textContent = `Guess a number between 1 and ${this.range}`;
         this.updateGuessLeft();
         this.waitForEnter();
-    }
-    generateRandomNumber() {
-        return Math.floor(Math.random() * this.range) + 1;
     }
     waitForEnter() {
         this.guessInput.addEventListener("keydown", (event) => {

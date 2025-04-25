@@ -1,3 +1,5 @@
+import getRandomNumber from "../utils.js";
+
 enum Guess {
     correct,
     low,
@@ -20,14 +22,10 @@ class GuessNumber {
             private guessLeft: HTMLElement,
             private guessInput: HTMLInputElement
         ) {
-        this.randomNumber = this.generateRandomNumber();
+        this.randomNumber = getRandomNumber(this.range, 1);
         this.guessMessage.textContent = `Guess a number between 1 and ${this.range}`;
         this.updateGuessLeft();
         this.waitForEnter();
-    }
-
-    private generateRandomNumber(): number {
-        return Math.floor(Math.random() * this.range) + 1;
     }
 
     private waitForEnter(): void {

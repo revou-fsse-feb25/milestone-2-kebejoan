@@ -1,6 +1,7 @@
 import ClickingGame from './clicking-game.js';
 import Difficulty from './clicking-difficulty.js';
 import { gameDifficulty } from '../difficulty.js';
+import getRandomNumber from '../utils.js';
 
 const clickingGameStart = document.getElementById("clicking-game-start");
 const clickingGameStartMessage = document.getElementById("clicking-game-message");
@@ -32,9 +33,9 @@ clickingGameStart?.addEventListener("click", () => {
     const colDifficulty : number = difficulty.col(gameDifficulty);
     const offsetRowDifficulty : number = difficulty.offsetRow(gameDifficulty);
     const offsetColDifficulty : number = difficulty.offsetCol(gameDifficulty);
-    const rowValue : number = Math.floor(Math.random() * rowDifficulty) + offsetRowDifficulty;
-    const columnValue : number = Math.floor(Math.random() * colDifficulty) + offsetColDifficulty;
-    
+    const rowValue : number = getRandomNumber(rowDifficulty, offsetColDifficulty);
+    const columnValue : number = getRandomNumber(colDifficulty, offsetColDifficulty);
+
     clickMeGrid.style.gridRowStart = rowValue.toString();
     clickMeGrid.style.gridColumnStart = columnValue.toString();
 

@@ -1,4 +1,5 @@
 import Update from './rock-update.js';
+import getRandomNumber from '../utils.js';
 
 enum Choice {
     rock, //0
@@ -49,13 +50,8 @@ class RockPaperScissors {
         this.rounds = rounds;
 
         this.gameMessage.textContent = "Choose Your Weapon";
-        this.generateComputerChoice();
+        this.computerChoice = choices[getRandomNumber(3, 0)];
         this.checkChoices();
-    }
-
-    private generateComputerChoice() : void {
-        this.randomIndex = Math.floor(Math.random() * 3);
-        this.computerChoice = choices[this.randomIndex];
     }
 
     private checkChoices() : void {
@@ -80,7 +76,7 @@ class RockPaperScissors {
         else winCondition[player] === computer ? this.resultUpdate(Result.win) : this.resultUpdate(Result.loose);
         setTimeout(() => {
             if (this.playerScore < this.rounds && this.computerScore < this.rounds){
-                this.generateComputerChoice();
+                this.computerChoice = choices[getRandomNumber(3, 0)];
                 update.newRound();
             } else if (this.playerScore === this.rounds)
                 this.gameOver(Winner.player);

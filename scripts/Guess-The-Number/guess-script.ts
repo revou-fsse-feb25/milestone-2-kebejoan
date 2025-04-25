@@ -14,7 +14,6 @@ const difficulty = new Difficulty();
 guessStart?.addEventListener("click", () => {
     guessStart.classList.add("hidden");
     guessForm?.classList.remove("hidden");
-
     if (!guessMessage || !guessLeft || !guessInput) {
         throw new Error("Missing required input elements for the game.");
     }
