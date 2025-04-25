@@ -21,15 +21,16 @@ const update = new Update();
 const choices = [Choice.rock, Choice.paper, Choice.scissors];
 const winCondition = [Choice.scissors, Choice.rock, Choice.paper];
 class RockPaperScissors {
-    constructor(rounds) {
-        this.gameMessage = document.getElementById("game-message");
-        this.playerRock = document.getElementById("p-rock");
-        this.playerPaper = document.getElementById("p-paper");
-        this.playerScissors = document.getElementById("p-scissors");
-        this.selectWindow = document.getElementById("select-window");
-        this.scoreWindow = document.getElementById("score-window");
-        this.score = document.getElementById("score");
-        this.scoreFinal = document.getElementById("score-final");
+    constructor(rounds, gameMessage, playerRock, playerPaper, playerScissors, selectWindow, scoreWindow, score, scoreFinal) {
+        this.rounds = rounds;
+        this.gameMessage = gameMessage;
+        this.playerRock = playerRock;
+        this.playerPaper = playerPaper;
+        this.playerScissors = playerScissors;
+        this.selectWindow = selectWindow;
+        this.scoreWindow = scoreWindow;
+        this.score = score;
+        this.scoreFinal = scoreFinal;
         this.playerScore = 0;
         this.computerScore = 0;
         this.playerChoice = Choice.default;
@@ -37,6 +38,7 @@ class RockPaperScissors {
         this.randomIndex = -1;
         this.message = "";
         this.rounds = rounds;
+        this.gameMessage.textContent = "Choose Your Weapon";
         this.generateComputerChoice();
         this.checkChoices();
     }
@@ -45,21 +47,17 @@ class RockPaperScissors {
         this.computerChoice = choices[this.randomIndex];
     }
     checkChoices() {
-        var _a, _b, _c;
-        (_a = this.playerRock) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
-            this.playerChoice = Choice.rock;
-            this.compareChoices(this.computerChoice, this.playerChoice);
-            update.choice(this.computerChoice, this.playerChoice);
-        });
-        (_b = this.playerPaper) === null || _b === void 0 ? void 0 : _b.addEventListener("click", () => {
-            this.playerChoice = Choice.paper;
-            this.compareChoices(this.computerChoice, this.playerChoice);
-            update.choice(this.computerChoice, this.playerChoice);
-        });
-        (_c = this.playerScissors) === null || _c === void 0 ? void 0 : _c.addEventListener("click", () => {
-            this.playerChoice = Choice.scissors;
-            this.compareChoices(this.computerChoice, this.playerChoice);
-            update.choice(this.computerChoice, this.playerChoice);
+        const choiceMap = [
+            [this.playerRock, Choice.rock],
+            [this.playerPaper, Choice.paper],
+            [this.playerScissors, Choice.scissors]
+        ];
+        choiceMap.forEach(([element, choice]) => {
+            element.addEventListener("click", () => {
+                this.playerChoice = choice;
+                this.compareChoices(this.computerChoice, this.playerChoice);
+                update.choice(this.computerChoice, this.playerChoice);
+            });
         });
     }
     compareChoices(computer, player) {
@@ -91,22 +89,14 @@ class RockPaperScissors {
             case Result.tie:
                 this.message = "It's a tie!";
         }
-        if (this.gameMessage)
-            this.gameMessage.textContent = this.message;
-        if (this.score)
-            this.score.textContent = `${this.playerScore} - ${this.computerScore}`;
+        this.gameMessage.textContent = this.message;
+        this.score.textContent = `${this.playerScore} - ${this.computerScore}`;
     }
     gameOver(winner) {
-        var _a, _b;
-        (_a = this.selectWindow) === null || _a === void 0 ? void 0 : _a.classList.add("hidden");
-        (_b = this.scoreWindow) === null || _b === void 0 ? void 0 : _b.classList.remove("hidden");
-        if (this.gameMessage) {
-            this.gameMessage.textContent = `Game Over!
-            ${winner} wins!`;
-        }
-        if (this.scoreFinal) {
-            this.scoreFinal.textContent = `${this.playerScore} - ${this.computerScore}`;
-        }
+        this.selectWindow.classList.add("hidden");
+        this.scoreWindow.classList.remove("hidden");
+        this.gameMessage.textContent = `Game Over! ${winner} wins!`;
+        this.scoreFinal.textContent = `${this.playerScore} - ${this.computerScore}`;
     }
 }
 export default RockPaperScissors;
