@@ -1,4 +1,4 @@
-import { GameDifficulty } from '../difficulty.js';
+import { GameDifficulty } from '../difficulty.js'; //unused
 
 class ClickingGame {
     private clickMe : HTMLElement | null;
@@ -32,7 +32,7 @@ class ClickingGame {
 
     private initTimer() : void{
         if (this.timer > 0){
-            setTimeout(() => {
+            setTimeout(() => { // --> may memory leak. Try set Interval and clear Interval
                 this.timer--;
                 this.updateTime();
                 this.initTimer();

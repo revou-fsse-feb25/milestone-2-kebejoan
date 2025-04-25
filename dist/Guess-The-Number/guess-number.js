@@ -17,9 +17,10 @@ class GuessNumber {
         this.message = "";
         this.userNumber = -1;
         this.guessLeftValue = 5;
+        this.invalidInput = -999999;
+        this.closeRange = 10;
         this.range = range;
         this.randomNumber = Math.floor(Math.random() * this.range) + 1;
-        alert(`For testing purposes, the number is ${this.randomNumber}`);
         if (this.guessMessage) {
             this.guessMessage.textContent = `Guess a number between 1 and ${this.range}`; //difficulty will change the range
         }
@@ -32,7 +33,7 @@ class GuessNumber {
             var _a;
             if (event.key === "Enter") {
                 event.preventDefault();
-                this.userNumber = ((_a = this.guessInput) === null || _a === void 0 ? void 0 : _a.valueAsNumber) || -999999;
+                this.userNumber = ((_a = this.guessInput) === null || _a === void 0 ? void 0 : _a.valueAsNumber) || this.invalidInput;
                 this.compareNumbers();
                 if (this.guessInput)
                     this.guessInput.value = "";
@@ -40,17 +41,17 @@ class GuessNumber {
         });
     }
     compareNumbers() {
-        if (this.userNumber === -999999) {
+        if (this.userNumber === this.invalidInput) {
             this.guess = Guess.default;
         }
         else if (this.userNumber > this.randomNumber) {
-            if (this.userNumber - this.randomNumber < 10)
+            if (this.userNumber - this.randomNumber < this.closeRange)
                 this.guess = Guess.closeHigh;
             else
                 this.guess = Guess.high;
         }
         else if (this.userNumber < this.randomNumber) {
-            if (this.randomNumber - this.userNumber < 10)
+            if (this.randomNumber - this.userNumber < this.closeRange)
                 this.guess = Guess.closeLow;
             else
                 this.guess = Guess.low;

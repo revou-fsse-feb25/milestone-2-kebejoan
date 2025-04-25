@@ -15,7 +15,9 @@ function renderCards() {
     gameContainer.innerHTML = "";
     cards.forEach(card => {
         const cardEl = document.createElement("div");
-        cardEl.className = `w-20 h-28 rounded-xl flex items-center justify-center text-4xl font-bold transition duration-300 shadow-xs shadow-yellow-400 ${card.isFlipped || card.isMatched ? "bg-red-700 text-white cursor-default" : "bg-neutral-700 cursor-pointer hover:scale-105 hover:-translate-y-1"}`;
+        cardEl.className = `w-20 h-28 rounded-xl flex items-center justify-center text-4xl font-bold transition duration-300 shadow-xs shadow-yellow-400 ${card.isFlipped || card.isMatched ? "bg-red-700 text-white cursor-default" : "bg-neutral-700 cursor-pointer hover:scale-105 hover:-translate-y-1"
+        //*^^^Check if flipped or matched
+        }`;
         cardEl.textContent = card.isFlipped || card.isMatched ? String(card.value) : "";
         cardEl.addEventListener("click", () => handleCardClick(card.id));
         gameContainer.appendChild(cardEl);
@@ -23,25 +25,26 @@ function renderCards() {
 }
 let flippedCards = [];
 function handleCardClick(id) {
-    const card = cards.find(c => c.id === id);
+    const card = cards.find(c => c.id === id); //find the card that was clicked by its id
     if (!card || card.isFlipped || card.isMatched || flippedCards.length === 2)
-        return;
-    card.isFlipped = true;
-    flippedCards.push(card);
-    renderCards();
+        return; //to handle if the card is already flipped or matched or if there are already 2 flipped cards
+    card.isFlipped = true; //change the status of the card to flipped
+    flippedCards.push(card); //push the card to the flippedCards array.
+    renderCards(); //render the cards back. card with matched OR flipped status will stays face up. Check * LN 30
+    // if there are two flipped cards, check if they match below
     if (flippedCards.length === 2) {
-        const [first, second] = flippedCards;
-        if (first.value === second.value) {
-            first.isMatched = true;
-            second.isMatched = true;
-            flippedCards = [];
+        const [first, second] = flippedCards; //destructure the flippedCards array to 'first' and 'second'
+        if (first.value === second.value) { //check if match
+            first.isMatched = true; //change the status of the first card to matched
+            second.isMatched = true; //change the status of the second card to matched
+            flippedCards = []; //empty the flippedCards array
         }
         else {
             setTimeout(() => {
                 first.isFlipped = false;
                 second.isFlipped = false;
                 flippedCards = [];
-                renderCards();
+                renderCards(); //after some time, render the cards back. card with matched OR flipped status will stays face up. Check * LN 30
             }, 1000);
         }
     }
